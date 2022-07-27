@@ -1,2 +1,2 @@
 # CyDotian
-A software that identifies internal repeats of sequences
+An algorithm to identify internal repeats of sequences
