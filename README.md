@@ -1,6 +1,6 @@
 # **CyDotian**
 
-### An algorithm to identify internal repeats of sequences
+### An algorithm for identifying internal repeats of nucleic acid and amino acid sequences.
 
 | Authors | Huilong Chen           |
 | ------- | ---------------------- |
