@@ -23,6 +23,7 @@ $ python3 program_name.py -h/--help (for Python scripts)
 
 
 
+
 ###### The following is the list of executable programs:
 
 bpRepeatScan (used for nucleic acid sequences)
@@ -31,9 +32,11 @@ aaRepeatScan (used for amino acid sequences)
 
 
 
+
 ###### Parameter configuration file
 
 CyDotian.config
+
 
 
 
@@ -54,6 +57,7 @@ Tool 6. 1.5_batch_extract_repeat_sequences_larger_than_repeat_length.py
 Tool 7. 1.6_Extract_the_corresponding_results_by_name.py
 
 Tool 8. 1.7_batch_run_CyDotian_in_pairwise_comparison_mode.py
+
 
 
 
