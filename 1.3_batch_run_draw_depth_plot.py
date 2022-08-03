@@ -99,7 +99,7 @@ try:
                     directDepthArray = directDepth(directFilePath,repeatLen)
                     ax.bar(x, height=directDepthArray, width=1.0, alpha=0.7, color='blue')
 
-                    depthFile = open(exportFolderPath + '/' + name + '_direct_depths.txt', 'w')
+                    depthFile = open(exportFolderPath + '/' + name + '_direct_depths.txt', 'w', encoding='utf-8')
                     for a in directDepthArray:
                         depthFile.write(str(a) + '\n')
                     depthFile.close()
@@ -110,7 +110,7 @@ try:
                     invertedDepthArray = invertedDepth(invertedFilePath, repeatLen)
                     ax.bar(x, height=invertedDepthArray, width=1.0, alpha=0.7, color='red')
 
-                    depthFile = open(exportFolderPath + '/' + name + '_inverted_depths.txt', 'w')
+                    depthFile = open(exportFolderPath + '/' + name + '_inverted_depths.txt', 'w', encoding='utf-8')
                     for a in invertedDepthArray:
                         depthFile.write(str(abs(a)) + '\n')
                     depthFile.close()

@@ -672,7 +672,7 @@ try:
 
         if [] == intersectionList and [] == besidesIntersectionList and [] == intersectionListOriginal and [] == besidesIntersectionListOriginal and totalNumber == failNumber + successNumber and totalNumber == failNumber + successNumberOriginal:
             print(
-                "For 'positions' and 'positions_original', the sum of this number of successes and failures and and the ID is correct!\n")
+                "For 'positions' and 'positions_original', the sum of this number of successes and failures and the ID is correct!\n")
         else:
             state = -1
 
