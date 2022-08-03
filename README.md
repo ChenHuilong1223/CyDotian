@@ -4,8 +4,8 @@
 
 | Authors | Huilong Chen           |
 | ------- | ---------------------- |
-|         | Shuyan Feng            |
-|         | Weina Ge               |
+|         | Weina Ge            |
+|         | Shuyan Feng               |
 |         | Kuikui Ni              |
 |         | Xiyin Wang             |
 |         | Fuyu Yang              |
