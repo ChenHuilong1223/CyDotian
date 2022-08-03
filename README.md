@@ -52,7 +52,7 @@ Tool 4. 1.3_batch_run_draw_depth_plot.py
 
 Tool 5. 1.4_batch_run_output_repeat_density.py
 
-Tool 6. 1.5_batch_extract_repeat_sequences_larger_than_repeat_length.py
+Tool 6. 1.5_batch_extract_repeat_sequences.py
 
 Tool 7. 1.6_Extract_the_corresponding_results_by_name.py
 
