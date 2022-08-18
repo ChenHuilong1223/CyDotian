@@ -38,14 +38,14 @@ try:
         folderList = dirs
         break
 
-    def copyFile(sourceFilePath, destinationFolderPath):  # 复制函数
+    def copyFile(sourceFilePath, destinationFolderPath):
         if not os.path.isfile(sourceFilePath):
             print("{} not exist!".format(sourceFilePath))
         else:
-            fileFolderPath, fileName = os.path.split(sourceFilePath)  # 分离文件名和路径
+            fileFolderPath, fileName = os.path.split(sourceFilePath)
             if not os.path.exists(destinationFolderPath):
-                os.makedirs(destinationFolderPath)  # 创建路径
-            shutil.copy(sourceFilePath, destinationFolderPath + fileName)  # 复制文件
+                os.makedirs(destinationFolderPath)
+            shutil.copy(sourceFilePath, destinationFolderPath + fileName)
 
     logFile = open(exportFolderPath + '/log.txt', 'w', encoding='utf-8')
     logFile.write('Time: ' + time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time())))
@@ -65,7 +65,6 @@ try:
                         copyFile(resultFilePath, destinationFolderPath + '/')
         elif 'positions_original_dotplots' == folderName:
             for resultFileName in resultFileList:
-                # if resultFileName.endswith('_direct.pdf') or resultFileName.endswith('_direct.png') or resultFileName.endswith('_inverted.pdf') or resultFileName.endswith('_inverted.png'):
                 if resultFileName.endswith('_direct.pdf'):
                     name = re.findall("(.*?)_direct.pdf", resultFileName)[0]
                     if name in nameList:
@@ -189,6 +188,22 @@ try:
                         copyFile(resultFilePath, destinationFolderPath + '/')
                 elif resultFileName.endswith('_reverse_complement_sequences.txt'):
                     name = re.findall("(.*?)_reverse_complement_sequences.txt", resultFileName)[0]
+                    if name in nameList:
+                        resultFilePath = resultFolder + '/' + resultFileName
+                        destinationFolderPath = exportFolderPath + '/' + folderName
+                        mkdir(destinationFolderPath)
+                        copyFile(resultFilePath, destinationFolderPath + '/')
+        elif 'positions_original_similar_sequences' == folderName:
+            for resultFileName in resultFileList:
+                if resultFileName.endswith('_direct_similar_sequences.txt'):
+                    name = re.findall("(.*?)_direct_similar_sequences.txt", resultFileName)[0]
+                    if name in nameList:
+                        resultFilePath = resultFolder + '/' + resultFileName
+                        destinationFolderPath = exportFolderPath + '/' + folderName
+                        mkdir(destinationFolderPath)
+                        copyFile(resultFilePath, destinationFolderPath + '/')
+                elif resultFileName.endswith('_inverted_similar_sequences.txt'):
+                    name = re.findall("(.*?)_inverted_similar_sequences.txt", resultFileName)[0]
                     if name in nameList:
                         resultFilePath = resultFolder + '/' + resultFileName
                         destinationFolderPath = exportFolderPath + '/' + folderName

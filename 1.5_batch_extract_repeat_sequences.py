@@ -33,7 +33,6 @@ try:
         folderList = dirs
         break
 
-    # 这里可以判断importSequenceFileList和folderList是否有差集，否则抛出异常!
     if [] != list(set(folderList) - set(importSequenceFileList)):
         print('The corresponding fasta file is missing in the input folder containing fasta files, please check!')
         sys.exit(-1)
@@ -85,11 +84,9 @@ try:
                         for line in positionFile:
                             lineList = line.strip('\n').split('\t')
                             if int(lineList[4]) >= repeatLen:
-                                directRepeatSequenceFile = open(directRepeatSequenceFilePath, 'w', encoding='utf-8') # 有大于指定长度的结果才创建吧，不然用户会说无法判断是没有，还是程序输出错误。
+                                directRepeatSequenceFile = open(directRepeatSequenceFilePath, 'w', encoding='utf-8')
                             break
-                    # posTable = pd.read_csv(filePath, encoding='utf-8', sep='\t', header=None)
-                    # for chl in posTable.values:
-                    # positionFile = open(filePath, 'r', encoding='utf-8')
+
                     with open(filePath, 'r', encoding='utf-8') as positionFile:
                         for line in positionFile:
                             lineList = line.strip('\n').split('\t')
@@ -113,7 +110,7 @@ try:
                         for line in positionFile:
                             lineList = line.strip('\n').split('\t')
                             if int(lineList[4]) >= repeatLen:
-                                invertedRepeatSequenceFile = open(invertedRepeatSequenceFilePath, 'w', encoding='utf-8') # 有大于指定长度的结果才创建吧，不然用户会说无法判断是没有，还是程序输出错误。
+                                invertedRepeatSequenceFile = open(invertedRepeatSequenceFilePath, 'w', encoding='utf-8')
                             break
 
                     with open(filePath, 'r', encoding='utf-8') as positionFile:
@@ -140,7 +137,7 @@ try:
                             lineList = line.strip('\n').split('\t')
                             if int(lineList[4]) >= repeatLen:
                                 reverseComplementRepeatSequenceFile = open(reverseComplementRepeatSequenceFilePath, 'w',
-                                                                  encoding='utf-8')  # 有大于指定长度的结果才创建吧，不然用户会说无法判断是没有，还是程序输出错误。
+                                                                  encoding='utf-8')
                             break
 
                     with open(filePath, 'r', encoding='utf-8') as positionFile:

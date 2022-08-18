@@ -165,25 +165,23 @@ try:
                             tempSingleInputFile2.close()
                             mode = 0
                             exactMatch = -1
-                            # command = 'cd ./bin/; ./bpRepeatScan' + ' ' + str(identityThr) + ' ' + str(mode) + ' ' + str(
-                            #     DNA_Matrix) + ' ' + str(exactMatch)
-                            # os.system(command)
+
                             command = "./bpRepeatScan {} {} {} {}".format(str(identityThr), str(mode), str(DNA_Matrix), str(exactMatch))
                             process = subprocess.Popen(command, universal_newlines=True, stdin=subprocess.PIPE,
                                                        stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True,
                                                        preexec_fn=os.setsid)
-                            stdoutput, erroutput = process.communicate()  # 这行代码保证调用的子进程结束之后再执行Python脚本中下面的代码。
+                            stdoutput, erroutput = process.communicate()
 
                             print("mode 0, {}, process.returncode: {}".format(name1vs2, process.returncode))
-                            if process.returncode:  # 获取进程的返回值。如果进程还没有结束，返回None。根据自我实验，就是等价于Popen.poll()
+                            if process.returncode:
                                 print(name1vs2, length1, length2, 'errOutput: ', erroutput.strip('\n'), sep=', ', end='***\n')
                                 print(name1vs2, length1, length2, 'stdOutput: ', stdoutput.strip('\n'), sep=', ', end='***\n')
                                 if process.returncode < 0:
                                     print('The process calling the bpRepeatScan program was killed by the system!')
                                 print('chenhuilong1\n')
                                 failFile.write(name1vs2 + '\t' + str(length1) + '\t' + str(length2) + '\n')
-                                print('***', file=failLogFile)  # 这里同样不用str()也行。都一样。
-                                print(process.returncode, name1vs2, length1, length2, sep='\t', end='***\n', file=failLogFile)  # 这里同样不用str()也行。都一样。
+                                print('***', file=failLogFile)
+                                print(process.returncode, name1vs2, length1, length2, sep='\t', end='***\n', file=failLogFile)
                                 print('errOutput: ', erroutput.strip('\n'), file=failLogFile)
                                 print('stdOutput: ', stdoutput.strip('\n'), end='\n***\n', file=failLogFile)
                                 try:
@@ -193,9 +191,8 @@ try:
                                         print(e)
 
                                 removeThreeFiles()
-                                # 删除temp.single.input.fasta1.txt，temp.single.input.fasta2.txt， position.txt
                                 continue
-                            else:  # 子进程状态为0，表明正常执行完毕。根据自己的实验，读写数据量/序列超大的时候，还是可能会出现子进程不被杀死，导致后面读写文件有问题，如position.txt文件出现这行没写完，就停止并写下一行的情况。
+                            else:
                                 try:
                                     posTable = pd.read_csv('./position.txt', encoding='utf-8', sep='\t', header=None)
                                     posTable = posTable.sort_values(by=2, ascending=False).reset_index(drop=True)
@@ -223,7 +220,6 @@ try:
 
                                     if os.path.exists(customFolderPathOriginal + '/' + name1vs2 + '_positions_direct.txt'):
                                         os.remove(customFolderPathOriginal + '/' + name1vs2 + '_positions_direct.txt')
-                                    # 如果在，删除directPositionFileOriginal，
                         elif 'Amino acid' == fileType:
                             tempSingleInputFile1 = open('./temp.single.input.fasta1.txt', 'w', encoding='utf-8')
                             tempSingleInputFile1.write(seq1)
@@ -233,26 +229,24 @@ try:
                             tempSingleInputFile2.close()
                             mode = 0
                             exactMatch = -1
-                            # command = 'cd ./bin/; ./aaRepeatScan' + ' ' + str(similarityThr) + ' ' + str(mode) + ' ' + str(
-                            #     aminoAcidMatrix) + ' ' + str(exactMatch)
-                            # os.system(command)
+
                             command = "./aaRepeatScan {} {} {} {}".format(str(similarityThr), str(mode), str(aminoAcidMatrix), str(exactMatch))
                             process = subprocess.Popen(command, universal_newlines=True, stdin=subprocess.PIPE,
                                                        stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True,
                                                        preexec_fn=os.setsid)
-                            stdoutput, erroutput = process.communicate()  # 这行代码保证调用的子进程结束之后再执行Python脚本中下面的代码。
+                            stdoutput, erroutput = process.communicate()
 
                             print("mode 0, {}, process.returncode: {}".format(name1vs2, process.returncode))
-                            if process.returncode:  # 获取进程的返回值。如果进程还没有结束，返回None。根据自我实验，就是等价于Popen.poll()
+                            if process.returncode:
                                 print(name1vs2, length1, length2, 'errOutput: ', erroutput.strip('\n'), sep=', ', end='***\n')
                                 print(name1vs2, length1, length2, 'stdOutput: ', stdoutput.strip('\n'), sep=', ', end='***\n')
                                 if process.returncode < 0:
                                     print('The process calling the aaRepeatScan program was killed by the system!')
                                 print('chenhuilong1\n')
                                 failFile.write(name1vs2 + '\t' + str(length1) + '\t' + str(length2) + '\n')
-                                print('***', file=failLogFile)  # 这里同样不用str()也行。都一样。
+                                print('***', file=failLogFile)
                                 print(process.returncode, name1vs2, length1, length2, sep='\t', end='***\n',
-                                      file=failLogFile)  # 这里同样不用str()也行。都一样。
+                                      file=failLogFile)
                                 print('errOutput: ', erroutput.strip('\n'), file=failLogFile)
                                 print('stdOutput: ', stdoutput.strip('\n'), end='\n***\n', file=failLogFile)
                                 try:
@@ -262,9 +256,8 @@ try:
                                         print(e)
 
                                 removeThreeFiles()
-                                # 删除temp.single.input.fasta1.txt，temp.single.input.fasta2.txt， position.txt
                                 continue
-                            else:  # 子进程状态为0，表明正常执行完毕。根据自己的实验，读写数据量/序列超大的时候，还是可能会出现子进程不被杀死，导致后面读写文件有问题，如position.txt文件出现这行没写完，就停止并写下一行的情况。
+                            else:
                                 try:
                                     posTable = pd.read_csv('./position.txt', encoding='utf-8', sep='\t', header=None)
                                     posTable = posTable.sort_values(by=2, ascending=False).reset_index(drop=True)
@@ -293,7 +286,6 @@ try:
 
                                     if os.path.exists(customFolderPathOriginal + '/' + name1vs2 + '_positions_direct.txt'):
                                         os.remove(customFolderPathOriginal + '/' + name1vs2 + '_positions_direct.txt')
-                                    # 如果在，删除directPositionFileOriginal，
 
                     if '1' in modeList:
                         if 'DNA' == fileType:
@@ -305,26 +297,24 @@ try:
                             tempSingleInputFile2.close()
                             mode = 1
                             exactMatch = -1
-                            # command = 'cd ./bin/; ./bpRepeatScan' + ' ' + str(identityThr) + ' ' + str(mode) + ' ' + str(
-                            #     DNA_Matrix) + ' ' + str(exactMatch)
-                            # os.system(command)
+
                             command = "./bpRepeatScan {} {} {} {}".format(str(identityThr), str(mode), str(DNA_Matrix), str(exactMatch))
                             process = subprocess.Popen(command, universal_newlines=True, stdin=subprocess.PIPE,
                                                        stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True,
                                                        preexec_fn=os.setsid)
-                            stdoutput, erroutput = process.communicate()  # 这行代码保证调用的子进程结束之后再执行Python脚本中下面的代码。
+                            stdoutput, erroutput = process.communicate()
 
                             print("mode 1, {}, process.returncode: {}".format(name1vs2, process.returncode))
-                            if process.returncode:  # 获取进程的返回值。如果进程还没有结束，返回None。根据自我实验，就是等价于Popen.poll()
+                            if process.returncode:
                                 print(name1vs2, length1, length2, 'errOutput: ', erroutput.strip('\n'), sep=', ', end='***\n')
                                 print(name1vs2, length1, length2, 'stdOutput: ', stdoutput.strip('\n'), sep=', ', end='***\n')
                                 if process.returncode < 0:
                                     print('The process calling the bpRepeatScan program was killed by the system!')
                                 print('chenhuilong1\n')
                                 failFile.write(name1vs2 + '\t' + str(length1) + '\t' + str(length2) + '\n')
-                                print('***', file=failLogFile)  # 这里同样不用str()也行。都一样。
+                                print('***', file=failLogFile)
                                 print(process.returncode, name1vs2, length1, length2, sep='\t', end='***\n',
-                                      file=failLogFile)  # 这里同样不用str()也行。都一样。
+                                      file=failLogFile)
                                 print('errOutput: ', erroutput.strip('\n'), file=failLogFile)
                                 print('stdOutput: ', stdoutput.strip('\n'), end='\n***\n', file=failLogFile)
                                 try:
@@ -334,9 +324,8 @@ try:
                                         print(e)
 
                                 removeThreeFiles()
-                                # 删除temp.single.input.fasta1.txt，temp.single.input.fasta2.txt， position.txt
                                 continue
-                            else:  # 子进程状态为0，表明正常执行完毕。根据自己的实验，读写数据量/序列超大的时候，还是可能会出现子进程不被杀死，导致后面读写文件有问题，如position.txt文件出现这行没写完，就停止并写下一行的情况。
+                            else:
                                 try:
                                     posTable = pd.read_csv('./position.txt', encoding='utf-8', sep='\t', header=None)
                                     posTable = posTable.sort_values(by=2, ascending=False).reset_index(drop=True)
@@ -364,7 +353,6 @@ try:
 
                                     if os.path.exists(customFolderPathOriginal + '/' + name1vs2 + '_positions_inverted.txt'):
                                         os.remove(customFolderPathOriginal + '/' + name1vs2 + '_positions_inverted.txt')
-                                    # 如果在，删除directPositionFileOriginal.
                         elif 'Amino acid' == fileType:
                             tempSingleInputFile1 = open('./temp.single.input.fasta1.txt', 'w', encoding='utf-8')
                             tempSingleInputFile1.write(seq1)
@@ -374,26 +362,24 @@ try:
                             tempSingleInputFile2.close()
                             mode = 1
                             exactMatch = -1
-                            # command = 'cd ./bin/; ./aaRepeatScan' + ' ' + str(similarityThr) + ' ' + str(mode) + ' ' + str(
-                            #     aminoAcidMatrix) + ' ' + str(exactMatch)
-                            # os.system(command)
+
                             command = "./aaRepeatScan {} {} {} {}".format(str(similarityThr), str(mode), str(aminoAcidMatrix), str(exactMatch))
                             process = subprocess.Popen(command, universal_newlines=True, stdin=subprocess.PIPE,
                                                        stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True,
                                                        preexec_fn=os.setsid)
-                            stdoutput, erroutput = process.communicate()  # 这行代码保证调用的子进程结束之后再执行Python脚本中下面的代码。
+                            stdoutput, erroutput = process.communicate()
 
                             print("mode 1, {}, process.returncode: {}".format(name1vs2, process.returncode))
-                            if process.returncode:  # 获取进程的返回值。如果进程还没有结束，返回None。根据自我实验，就是等价于Popen.poll()
+                            if process.returncode:
                                 print(name1vs2, length1, length2, 'errOutput: ', erroutput.strip('\n'), sep=', ', end='***\n')
                                 print(name1vs2, length1, length2, 'stdOutput: ', stdoutput.strip('\n'), sep=', ', end='***\n')
                                 if process.returncode < 0:
                                     print('The process calling the aaRepeatScan program was killed by the system!')
                                 print('chenhuilong1\n')
                                 failFile.write(name1vs2 + '\t' + str(length1) + '\t' + str(length2) + '\n')
-                                print('***', file=failLogFile)  # 这里同样不用str()也行。都一样。
+                                print('***', file=failLogFile)
                                 print(process.returncode, name1vs2, length1, length2, sep='\t', end='***\n',
-                                      file=failLogFile)  # 这里同样不用str()也行。都一样。
+                                      file=failLogFile)
                                 print('errOutput: ', erroutput.strip('\n'), file=failLogFile)
                                 print('stdOutput: ', stdoutput.strip('\n'), end='\n***\n', file=failLogFile)
                                 try:
@@ -403,9 +389,8 @@ try:
                                         print(e)
 
                                 removeThreeFiles()
-                                # 删除temp.single.input.fasta1.txt，temp.single.input.fasta2.txt， position.txt
                                 continue
-                            else:  # 子进程状态为0，表明正常执行完毕。根据自己的实验，读写数据量/序列超大的时候，还是可能会出现子进程不被杀死，导致后面读写文件有问题，如position.txt文件出现这行没写完，就停止并写下一行的情况。
+                            else:
                                 try:
                                     posTable = pd.read_csv('./position.txt', encoding='utf-8', sep='\t', header=None)
                                     posTable = posTable.sort_values(by=2, ascending=False).reset_index(drop=True)
@@ -434,15 +419,13 @@ try:
 
                                     if os.path.exists(customFolderPathOriginal + '/' + name1vs2 + '_positions_inverted.txt'):
                                         os.remove(customFolderPathOriginal + '/' + name1vs2 + '_positions_inverted.txt')
-                                    # 如果在，删除directPositionFileOriginal.
                 except BaseException as e:
-                    print(name1vs2, length1, length2, e, e.__traceback__.tb_lineno, sep='***')  # 把名字和长度都打印出来吧，跟542一样，就是完全输出到文件版一摸一样。根据实测，写文件的时候，如果中断，这个文件最终还是空文件——那这个是否也需要去解决一下？先不解决也行，因为能打印到中断，哪怕没space了。所以这个Python的写文件方式是否可以换成Linux的追加重定向方式添加>>，然后可以保证不出现那个问题。
-                    print('chenhuilong3\n')  # 把这个定位报错再用户体验好一些吧。这个字符串就不改了。比如我看到报错得判断出来是哪块代码出的问题。比如通过换行，或首尾加标识字符等等。
+                    print(name1vs2, length1, length2, e, e.__traceback__.tb_lineno, sep='***')
+                    print('chenhuilong3\n')
                     failFile.write(name1vs2 + '\t' + str(length1) + '\t' + str(length2) + '\n')
                     print(name1vs2, length1, length2, e, e.__traceback__.tb_lineno, sep='***', file=failLogFile)
 
                 removeThreeFiles()
-                # 删除temp.single.input.fasta1.txt，temp.single.input.fasta2.txt， position.txt
 
         logFile.close()
         failFile.close()

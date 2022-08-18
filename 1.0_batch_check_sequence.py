@@ -52,7 +52,7 @@ try:
 
         for name, seq in chlFasta.items():
             if set(seq) - allowedSet:
-                print("The sequence of '{}' in file '{}' has illegal characters, please check!".format(name, fileName1)) # 检查的这个多序列文件有一个非法字符，我就将整个多序列文件按照规则替换之后再存到data_DNA_replace
+                print("The sequence of '{}' in file '{}' has illegal characters, please check!".format(name, fileName1))
                 checkResult = 'issue'
                 if '0' == fileType:
                     print("CyDotian provides a way to handle this by replacing all illegal characters with N, do you agree? yes/no")
