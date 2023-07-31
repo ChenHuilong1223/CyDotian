@@ -8,7 +8,7 @@ An algorithm for identifying internal repeats of nucleic acid and amino acid seq
 
 # Overview
 
-CyDotian algorithm is a dynamic programming algorithm realized by improving Smith-Waterman algorithm, which can identify all internal repeats of the sequence itself that allow mutation. In order to achieve efficient output of the results, we used C, the fastest underlying computer language available, to implement the algorithm and allow it to be compiled into an executable program. Downstream analysis tools are then written in Python, the most popular language for data processing and visualisation. These downstream analysis tools include processing the location and number of repeat segments, plotting dotplots, plotting depth plots, calculating repetition density and outputting specific repeat segment comparison details. All are batch processed and exported, which is extremely user-friendly. Users can suggest and optimise the development of all codes. Moreover, due to the applicability of the CyDotian algorithm, it can also be used to identify similarity segments between two different sequences that allow for mutations and can be used as an alternative to traditional sliding window sequence alignment methods. In addition, by replacing the U in the RNA sequence with a T, CyDotian can be used to find all the reverse complementary sequences, helping to predict the stem-loop structure of the RNA molecule.
+CyDotian algorithm is a dynamic programming algorithm, which can identify all internal repeats of the sequence itself that allow mutation. In order to achieve efficient output of the results, we used C, the fastest underlying computer language available, to implement the algorithm and allow it to be compiled into an executable program. Downstream analysis tools are then written in Python, the most popular language for data processing and visualisation. These downstream analysis tools include processing the location and number of repeat segments, plotting dotplots, plotting depth plots, calculating repetition density and outputting specific repeat segment comparison details. All are batch processed and exported, which is extremely user-friendly. Users can suggest and optimise the development of all codes. Moreover, due to the applicability of the CyDotian algorithm, it can also be used to identify similarity segments between two different sequences that allow for mutations. In addition, by replacing the U in the RNA sequence with a T, CyDotian can be used to find all the reverse complementary sequences, helping to predict the stem-loop structure of the RNA molecule.
 
 
 
@@ -24,11 +24,17 @@ bpRepeatScan (used for nucleic acid sequences)
 
 aaRepeatScan (used for amino acid sequences)
 
+slidingWindow (used for used for nucleic acid and amino acid sequences via sliding window method)
+
 
 
 ###### Parameter configuration file
 
-CyDotian.config
+CyDotian.config (used for CyDotian algorithm)
+
+CyDotian_exact_match.config (used for MUMmer's repeat-match algorithm)
+
+CyDotian_sliding_window.config (used for sliding window algorithm)
 
 
 
@@ -51,6 +57,16 @@ Tool 7. 1.6_Extract_the_corresponding_results_by_name.py
 Tool 8. 1.7_batch_run_CyDotian_in_pairwise_comparison_mode.py
 
 Tool 9. 1.8_batch_extract_repeat_sequences_in_pairwise_comparison_mode.py
+
+Tool 10. 2.1_batch_run_CyDotian_exact_match.py
+
+Tool 11. 2.7_batch_run_CyDotian_exact_match_in_pairwise_comparison_mode.py
+
+Tool 12. 3.1_batch_run_CyDotian_sliding_window.py
+
+Tool 13. 3.2_batch_run_CyDotian_sliding_window_in_pairwise_comparison_mode.py
+
+Tool 14. 3.3_batch_run_draw_dotplot_sliding_window.py
 
 
 
