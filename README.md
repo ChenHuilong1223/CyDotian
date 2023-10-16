@@ -69,11 +69,6 @@ Tool 13. 3.2_batch_run_CyDotian_sliding_window_in_pairwise_comparison_mode.py
 Tool 14. 3.3_batch_run_draw_dotplot_sliding_window.py
 
 
-
-###### Articles that have cited the CyDotian algorithm:
-
-*Ge W, Chen H, Zhang Y, et al. Integrative genomics analysis of the ever-shrinking pectin methylesterase (PME) gene family in foxtail millet (Setaria italica)[J]. Functional Plant Biology, 2022, 49(10): 874-886.. https://doi.org/10.1071/FP21319*
-
 # Documentation
 
 The online documentation is located at the [GitHub Wiki](https://github.com/ChenHuilong1223/CyDotian/wiki).
