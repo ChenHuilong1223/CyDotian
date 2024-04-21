@@ -10,9 +10,13 @@ A toolkit for identifying internal repeats of nucleic acid and amino acid sequen
 
 ![1](https://figshare.com/ndownloader/files/45770310)
 
+# Documentation
+
+The online documentation is located at the [GitHub Wiki](https://github.com/ChenHuilong1223/CyDotian/wiki).
+
 # Overview
 
-CyDotian is a toolkit, which can identify all internal repeats of the sequence itself. In order to achieve efficient output of the results, we used C, the fastest underlying computer language available, to implement the algorithm and allow it to be compiled into an executable program. Downstream analysis tools are then written in Python, the most popular language for data processing and visualisation. These downstream analysis tools include processing the location and number of repeat segments, plotting dotplots, plotting depth plots, calculating repetition density and outputting specific repeat segment comparison details. All are batch processed and exported, which is extremely user-friendly. Users can suggest and optimise the development of all codes. Moreover, due to the applicability of the CyDotian algorithm, it can also be used to identify similarity segments between two different sequences that allow for mutations.
+CyDotian is a toolkit, which can identify all internal repeats of the sequence itself. To achieve efficient output of the results, we used C, the fastest underlying computer language available, to implement the algorithm and allow it to be compiled into an executable program. Downstream analysis tools are then written in Python, the most popular language for data processing and visualisation. These downstream analysis tools include processing the location and number of repeat segments, plotting dotplots, plotting depth plots, calculating repetition density and outputting specific repeat segment comparison details. All are batch processed and exported, which is extremely user-friendly. Users can suggest and optimise the development of all codes. Moreover, due to the applicability of the CyDotian algorithm, it can also be used to identify similarity segments between two different sequences that allow for discrepancies.
 
 
 
@@ -71,8 +75,3 @@ Tool 12. 3.1_batch_run_CyDotian_sliding_window.py
 Tool 13. 3.2_batch_run_CyDotian_sliding_window_in_pairwise_comparison_mode.py
 
 Tool 14. 3.3_batch_run_draw_dotplot_sliding_window.py
-
-
-# Documentation
-
-The online documentation is located at the [GitHub Wiki](https://github.com/ChenHuilong1223/CyDotian/wiki).
