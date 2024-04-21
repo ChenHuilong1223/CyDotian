@@ -1,6 +1,6 @@
 # **CyDotian**’s manual
 
-A toolkit for identifying internal repeats of nucleic acid and amino acid sequences.
+An algorithm toolkit for identifying internal repeats of nucleic acid and amino acid sequences.
 
 | Authors | Huilong Chen           |
 | ------- | ---------------------- |
