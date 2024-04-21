@@ -1,6 +1,6 @@
 # **CyDotian**’s manual
 
-An algorithm toolkit for identifying internal repeats of nucleic acid and amino acid sequences.
+An algorithm toolkit for identifying internal repeats of nucleic acid and amino acid sequences/Chen Yan DOTe on magicIAN
 
 | Authors | Huilong Chen           |
 | ------- | ---------------------- |
