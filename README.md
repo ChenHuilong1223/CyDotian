@@ -76,6 +76,6 @@ Tool 13. 3.2_batch_run_CyDotian_sliding_window_in_pairwise_comparison_mode.py
 
 Tool 14. 3.3_batch_run_draw_dotplot_sliding_window.py
 
-In addition, for the convenience of researchers who are not good at using the command line, we have also developed a user-friendly GUI desktop platform (SAtoolkit, https://github.com/ChenHuilong1223/SAtoolkit).
+In addition, for the convenience of researchers who are not good at using the command line, we have also developed a user-friendly GUI desktop platform (SAtoolkit, https://github.com/ChenHuilong1223/SAtoolkit). It is more suitable for interactively viewing a particular sequence of interest, like Dotter and Dotlet.
 
 Finally, we sincerely hope that our tools can help your research work if you are browsing！
