@@ -6,6 +6,10 @@ A toolkit for identifying internal repeats of nucleic acid and amino acid sequen
 | ------- | ---------------------- |
 | Email   | chenhuilong131@163.com |
 
+# Graphical Abstract
+
+![1](https://figshare.com/ndownloader/files/45770310)
+
 # Overview
 
 CyDotian is a toolkit, which can identify all internal repeats of the sequence itself. In order to achieve efficient output of the results, we used C, the fastest underlying computer language available, to implement the algorithm and allow it to be compiled into an executable program. Downstream analysis tools are then written in Python, the most popular language for data processing and visualisation. These downstream analysis tools include processing the location and number of repeat segments, plotting dotplots, plotting depth plots, calculating repetition density and outputting specific repeat segment comparison details. All are batch processed and exported, which is extremely user-friendly. Users can suggest and optimise the development of all codes. Moreover, due to the applicability of the CyDotian algorithm, it can also be used to identify similarity segments between two different sequences that allow for mutations.
