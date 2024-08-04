@@ -5,9 +5,13 @@ CyDotian—Chen Yan DOTe on magicIAN
 
 ![0](https://figshare.com/ndownloader/files/45771621)
 
-| Authors | Huilong Chen           |
-| ------- | ---------------------- |
-| Email   | chenhuilong131@163.com |
+| Authors | Huilong Chen                                            |
+| ------- | ------------------------------------------------------- |
+|         | Fuyu Yang                                           |
+|         | Xiyin Wang                                             |
+|         | Gang Xu                                             |
+|         | Weina Ge                                                |
+| Email   | [chenhuilong131@163.com](mailto:chenhuilong131@163.com) |
 
 # Graphical Abstract
 
