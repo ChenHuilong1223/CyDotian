@@ -86,3 +86,8 @@ Tool 14. 3.3_batch_run_draw_dotplot_sliding_window.py
 In addition, for the convenience of researchers who are not good at using the command line, we have also developed a user-friendly GUI desktop platform (SAtoolkit, https://github.com/ChenHuilong1223/SAtoolkit). It is more suitable for interactively viewing a particular sequence of interest, like Dotter and Dotlet.
 
 Finally, we sincerely hope that our tools can help your research work if you are browsing！
+
+#### **Citation**
+
+*Chen, H., Xu, G., Ge, W., Feng, F., Lin, Y., Guo, C., Jing, Q., Wang, X., Nussio, L., Wang, X., Yang, Fu., et al. CyDotian: a versatile toolkit for identification of intragenic repeat sequences. Mol Horticulture 4, 37 (2024). https://doi.org/10.1186/s43897-024-00113-3*
+
