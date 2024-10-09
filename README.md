@@ -89,5 +89,5 @@ Finally, we sincerely hope that our tools can help your research work if you are
 
 #### **Citation**
 
-*Chen, H., Xu, G., Ge, W., Feng, F., Lin, Y., Guo, C., Jing, Q., Wang, X., Nussio, L., Wang, X., & Yang, F. (2024) CyDotian: a versatile toolkit for identification of intragenic repeat sequences. Mol Horticulture 4, 37. https://doi.org/10.1186/s43897-024-00113-3*
+*Chen, H., Xu, G., Ge, W., Feng, F., Lin, Y., Guo, C., Jing, Q., Wang, X., Nussio, L., Wang, X., & Yang, F. (2024). CyDotian: a versatile toolkit for identification of intragenic repeat sequences. Molecular Horticulture 4, 37. https://doi.org/10.1186/s43897-024-00113-3*
 
