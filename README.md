@@ -91,3 +91,7 @@ Finally, we sincerely hope that our tools can help your research work if you are
 
 *Chen, H., Xu, G., Ge, W., Feng, F., Lin, Y., Guo, C., Jing, Q., Wang, X., Nussio, L., Wang, X., & Yang, F. (2024). CyDotian: a versatile toolkit for identification of intragenic repeat sequences. Molecular Horticulture 4, 37. https://doi.org/10.1186/s43897-024-00113-3*
 
+#### **News**
+1.0.1
+Users are strongly advised to double-check the percentage of N characters in their DNA sequences, and if they feel that the percentage is too high, such sequences are not meaningful to analyze by themselves.
+Fixed an output error caused by too many N characters in a sequence (for "sequence_names_*" files in "positions" folder).
