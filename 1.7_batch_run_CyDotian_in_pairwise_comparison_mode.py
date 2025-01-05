@@ -197,8 +197,15 @@ try:
                                     posTable = pd.read_csv('./position.txt', encoding='utf-8', sep='\t', header=None)
                                     posTable = posTable.sort_values(by=2, ascending=False).reset_index(drop=True)
 
-                                    if posTable[2][1] >= repeatLen:
-                                        directPositionBigLengthLogFile.write(name1vs2 + '\n')
+                                    # =========
+                                    # if posTable[2][1] >= repeatLen:
+                                    #     directPositionBigLengthLogFile.write(name1vs2 + '\n')
+                                    # The following modified code：
+                                    for chl in posTable.values:
+                                        if chl[2] >= repeatLen:
+                                            directPositionBigLengthLogFile.write(name1vs2 + '\n')
+                                            break
+                                    # =========
 
                                     directPositionFileOriginal = open(
                                         customFolderPathOriginal + '/' + name1vs2 + '_positions_direct.txt', 'w',
@@ -262,8 +269,15 @@ try:
                                     posTable = pd.read_csv('./position.txt', encoding='utf-8', sep='\t', header=None)
                                     posTable = posTable.sort_values(by=2, ascending=False).reset_index(drop=True)
 
-                                    if posTable[2][1] >= repeatLen:
-                                        directPositionBigLengthLogFile.write(name1vs2 + '\n')
+                                    # =========
+                                    # if posTable[2][1] >= repeatLen:
+                                    #     directPositionBigLengthLogFile.write(name1vs2 + '\n')
+                                    # The following modified code：
+                                    for chl in posTable.values:
+                                        if chl[2] >= repeatLen:
+                                            directPositionBigLengthLogFile.write(name1vs2 + '\n')
+                                            break
+                                    # =========
 
                                     directPositionFileOriginal = open(
                                         customFolderPathOriginal + '/' + name1vs2 + '_positions_direct.txt', 'w',
@@ -330,8 +344,15 @@ try:
                                     posTable = pd.read_csv('./position.txt', encoding='utf-8', sep='\t', header=None)
                                     posTable = posTable.sort_values(by=2, ascending=False).reset_index(drop=True)
 
-                                    if posTable[2][0] >= repeatLen:
-                                        invertedPositionBigLengthLogFile.write(name1vs2 + '\n')
+                                    # =========
+                                    # if posTable[2][0] >= repeatLen:
+                                    #     invertedPositionBigLengthLogFile.write(name1vs2 + '\n')
+                                    # The following modified code：
+                                    for chl in posTable.values:
+                                        if chl[2] >= repeatLen:
+                                            invertedPositionBigLengthLogFile.write(name1vs2 + '\n')
+                                            break
+                                    # =========
 
                                     invertedPositionFileOriginal = open(
                                         customFolderPathOriginal + '/' + name1vs2 + '_positions_inverted.txt',
@@ -395,8 +416,15 @@ try:
                                     posTable = pd.read_csv('./position.txt', encoding='utf-8', sep='\t', header=None)
                                     posTable = posTable.sort_values(by=2, ascending=False).reset_index(drop=True)
 
-                                    if posTable[2][0] >= repeatLen:
-                                        invertedPositionBigLengthLogFile.write(name1vs2 + '\n')
+                                    # =========
+                                    # if posTable[2][0] >= repeatLen:
+                                    #     invertedPositionBigLengthLogFile.write(name1vs2 + '\n')
+                                    # The following modified code：
+                                    for chl in posTable.values:
+                                        if chl[2] >= repeatLen:
+                                            invertedPositionBigLengthLogFile.write(name1vs2 + '\n')
+                                            break
+                                    # =========
 
                                     invertedPositionFileOriginal = open(
                                         customFolderPathOriginal + '/' + name1vs2 + '_positions_inverted.txt',
@@ -558,3 +586,4 @@ print(f'The program running time: {hour}hour(s) {minute}minute(s) {second}second
 # revised by Huilong Chen, May 27, 2022!
 # revised by Huilong Chen, July 26, 2022! A new CyDotian.
 # revised by Huilong Chen, August 1, 2022! Optimize.
+# revised by Huilong Chen, January 5, 2025! Optimize.

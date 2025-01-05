@@ -160,8 +160,15 @@ try:
                                 posTable = pd.read_csv('./position.txt', encoding='utf-8', sep='\t', header=None)
                                 posTable = posTable.sort_values(by=2, ascending=False).reset_index(drop=True)
 
-                                if posTable[2][1] >= repeatLen:
-                                    directPositionBigLengthLogFile.write(name + '\n')
+                                # =========
+                                # if posTable[2][1] >= repeatLen:
+                                #     directPositionBigLengthLogFile.write(name + '\n')
+                                # The following modified code:
+                                for chl in posTable.values:
+                                    if chl[1] > chl[0] and chl[2] >= repeatLen:
+                                        directPositionBigLengthLogFile.write(name + '\n')
+                                        break
+                                # =========
 
                                 directPositionFile = open(customFolderPath + '/' + name + '_positions_direct.txt', 'w',
                                                           encoding='utf-8')
@@ -236,8 +243,15 @@ try:
                                 posTable = pd.read_csv('./position.txt', encoding='utf-8', sep='\t', header=None)
                                 posTable = posTable.sort_values(by=2, ascending=False).reset_index(drop=True)
 
-                                if posTable[2][1] >= repeatLen:
-                                    directPositionBigLengthLogFile.write(name + '\n')
+                                # =========
+                                # if posTable[2][1] >= repeatLen:
+                                #     directPositionBigLengthLogFile.write(name + '\n')
+                                # The following modified code:
+                                for chl in posTable.values:
+                                    if chl[1] > chl[0] and chl[2] >= repeatLen:
+                                        directPositionBigLengthLogFile.write(name + '\n')
+                                        break
+                                # =========
 
                                 directPositionFile = open(customFolderPath + '/' + name + '_positions_direct.txt', 'w',
                                                           encoding='utf-8')
@@ -315,8 +329,15 @@ try:
                                 posTable = pd.read_csv('./position.txt', encoding='utf-8', sep='\t', header=None)
                                 posTable = posTable.sort_values(by=2, ascending=False).reset_index(drop=True)
 
-                                if posTable[2][0] >= repeatLen:
-                                    invertedPositionBigLengthLogFile.write(name + '\n')
+                                # =========
+                                # if posTable[2][0] >= repeatLen:
+                                #     invertedPositionBigLengthLogFile.write(name + '\n')
+                                # The following modified code：
+                                for chl in posTable.values:
+                                    if chl[1] > chl[0] and chl[2] >= repeatLen:
+                                        invertedPositionBigLengthLogFile.write(name + '\n')
+                                        break
+                                # =========
 
                                 invertedPositionFile = open(customFolderPath + '/' + name + '_positions_inverted.txt', 'w',
                                                             encoding='utf-8')
@@ -391,8 +412,15 @@ try:
                                 posTable = pd.read_csv('./position.txt', encoding='utf-8', sep='\t', header=None)
                                 posTable = posTable.sort_values(by=2, ascending=False).reset_index(drop=True)
 
-                                if posTable[2][0] >= repeatLen:
-                                    invertedPositionBigLengthLogFile.write(name + '\n')
+                                # =========
+                                # if posTable[2][0] >= repeatLen:
+                                #     invertedPositionBigLengthLogFile.write(name + '\n')
+                                # The following modified code：
+                                for chl in posTable.values:
+                                    if chl[1] > chl[0] and chl[2] >= repeatLen:
+                                        invertedPositionBigLengthLogFile.write(name + '\n')
+                                        break
+                                # =========
 
                                 invertedPositionFile = open(customFolderPath + '/' + name + '_positions_inverted.txt',
                                                             'w', encoding='utf-8')
@@ -471,8 +499,15 @@ try:
                                 posTable = pd.read_csv('./position.txt', encoding='utf-8', sep='\t', header=None)
                                 posTable = posTable.sort_values(by=2, ascending=False).reset_index(drop=True)
 
-                                if posTable[2][0] >= repeatLen:
-                                    reverseComplementPositionBigLengthLogFile.write(name + '\n')
+                                # =========
+                                # if posTable[2][0] >= repeatLen:
+                                #     reverseComplementPositionBigLengthLogFile.write(name + '\n')
+                                # The following modified code：
+                                for chl in posTable.values:
+                                    if chl[1] > chl[0] and chl[2] >= repeatLen:
+                                        reverseComplementPositionBigLengthLogFile.write(name + '\n')
+                                        break
+                                # =========
 
                                 reverseComplementPositionFile = open(
                                     customFolderPath + '/' + name + '_positions_reverse_complement.txt', 'w', encoding='utf-8')
@@ -674,3 +709,4 @@ print(f'The program running time: {hour}hour(s) {minute}minute(s) {second}second
 # revised by Huilong Chen, May 27 2022!
 # revised by Huilong Chen, July 27, 2022! A new CyDotian -> seqAlignToolkit.
 # revised by Huilong Chen, August 1, 2022! Optimize.
+# revised by Huilong Chen, January 5, 2025! Optimize.
