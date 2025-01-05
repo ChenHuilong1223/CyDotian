@@ -99,7 +99,8 @@ except BaseException as e:
     print(e, e.__traceback__.tb_lineno)
 
 if 0 == state:
-    print('Congratulations, the script worked and finished successfully!')
+    print('Please note that if you have too many N characters in your DNA sequence, a sequence that is inherently meaningless to analyze, please consider deleting it.'
+          'Congratulations, the script worked and finished successfully!')
 elif -1 == state:
     print('Sadly, the script did not complete properly, please check the output log, resolve the problem, and try again!')
 
