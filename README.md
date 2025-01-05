@@ -9,7 +9,6 @@ CyDotian—Chen Yan DOTe on magicIAN
 | ------- | ------------------------------------------------------- |
 |         | Fuyu Yang                                           |
 |         | Xiyin Wang                                             |
-|         | Gang Xu                                             |
 |         | Weina Ge                                                |
 | Email   | [chenhuilong131@163.com](mailto:chenhuilong131@163.com) |
 
