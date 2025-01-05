@@ -93,7 +93,8 @@ Finally, we sincerely hope that our tools can help your research work if you are
 
 #### **News**
 
-## *1.0.1*
+##### *1.0.1*
 
-**.** Users are strongly advised to double-check the percentage of N characters in their DNA sequences, and if they feel that the percentage is too high, such sequences are not meaningful to analyze by themselves.
-**.** Fixed an output error caused by too many N characters in a sequence (for "sequence_names_*" files in "positions" folder).
+###### **.** Users are strongly advised to double-check the percentage of N characters in their DNA sequences, and if they feel that the percentage is too high, such sequences are not meaningful to analyze by themselves.
+
+###### **.** Fixed an output error caused by too many N characters in a sequence (for "sequence_names_*" files in "positions" folder).
